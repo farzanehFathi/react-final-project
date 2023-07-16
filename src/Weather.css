@@ -1,4 +1,5 @@
 .Weather {
+  margin: 20px 0 0;
   padding: 20px;
   max-width: 640px;
   border: 1px solid #dadde2;
@@ -15,8 +16,25 @@
   line-height: 20px;
 }
 
-.Weather .icon,
-.temp,
-.unit {
-  display: inline-block;
+.Weather .weather-summary {
+  display: flex;
+  align-items: start;
+}
+
+.Weather .temp {
+  color: rgb(33, 33, 33);
+  font-size: 56px;
+  line-height: 56px;
+  margin-left: 10px;
+}
+
+.Weather .icon img {
+  height: 56px;
+  width: 56px;
+}
+
+.Weather .unit {
+  color: rgb(33, 33, 33);
+  font-size: 16px;
+  margin-left: 6px;
 }
