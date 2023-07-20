@@ -16,10 +16,10 @@ export default function FormatDate({ date }) {
   let minute = date.getMinutes();
 
   if (hour < 10) {
-    hour = `0{hour}`;
+    hour = `0${hour}`;
   }
   if (minute < 10) {
-    minute = `0{minute}`;
+    minute = `0${minute}`;
   }
 
   return (

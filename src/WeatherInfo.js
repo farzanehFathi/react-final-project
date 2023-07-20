@@ -1,29 +1,11 @@
 import React from "react";
+import "./WeatherInfo.css";
 import FormatDate from "./FormatDate";
 
 export default function WeatherInfo({ data }) {
   return (
-    <div className="Weather">
-      <form className="mb-3">
-        <div className="row">
-          <div className="col-9">
-            <input
-              type="search"
-              placeholder="Please enter a city ..."
-              autoFocus="on"
-              className="form-control w-100 h-100"
-            />
-          </div>
-          <div className="col-3">
-            <input
-              type="submit"
-              value="Search"
-              className="w-100 btn btn-primary"
-            />
-          </div>
-        </div>
-      </form>
-      <div className="location-summary  mb-3">
+    <div className="WeatherInfo">
+      <div className="location-summary mb-3">
         {" "}
         <h1 className="text-capitalize">{data.cityName}</h1>
         <ul>
