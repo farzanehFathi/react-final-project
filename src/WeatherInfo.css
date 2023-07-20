@@ -20,7 +20,7 @@
   margin-left: 10px;
 }
 
-.WeatherInfo .icon img {
+.WeatherInfo .icon convas {
   height: 56px;
   width: 56px;
 }
