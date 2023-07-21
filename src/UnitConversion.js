@@ -18,7 +18,7 @@ export default function UnitConversion({ data }) {
       <span className="unitConversion">
         <span className="temp">{data.temperature}</span>
         <span className="unit">
-          °C |{" "}
+          °C |
           <a href="" onClick={showFahrenheit}>
             °F
           </a>

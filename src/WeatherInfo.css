@@ -3,6 +3,10 @@
   line-height: 28px;
 }
 
+.WeatherInfo a {
+  text-decoration: none;
+}
+
 .WeatherInfo li {
   font-size: 16px;
   line-height: 20px;
