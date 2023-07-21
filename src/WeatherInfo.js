@@ -2,6 +2,7 @@ import React from "react";
 import "./WeatherInfo.css";
 import FormatDate from "./FormatDate";
 import WeatherIcon from "./WeatherIcon";
+import UnitConversion from "./UnitConversion";
 
 export default function WeatherInfo({ data }) {
   return (
@@ -22,8 +23,7 @@ export default function WeatherInfo({ data }) {
           <div className="icon">
             <WeatherIcon iconCode={data.icon} />
           </div>
-          <div className="temp">{data.temperature}</div>
-          <div className="unit">°C</div>
+          <UnitConversion data={data} />
         </div>
         <div className="col-6">
           <ul>
