@@ -13,15 +13,12 @@ export default function UnitConversion({ data }) {
     setUnit("metric");
   }
 
-  if (unit == "metric") {
+  if (unit === "metric") {
     return (
       <span className="unitConversion">
         <span className="temp">{data.temperature}</span>
         <span className="unit">
-          °C |
-          <a href="" onClick={showFahrenheit}>
-            °F
-          </a>
+          °C |<span onClick={showFahrenheit}>°F</span>
         </span>
       </span>
     );
@@ -33,10 +30,7 @@ export default function UnitConversion({ data }) {
         </span>
         <span className="unit">
           {" "}
-          <a href="" onClick={showCelsius}>
-            °C
-          </a>{" "}
-          | °F
+          <span onClick={showCelsius}>°C</span> | °F
         </span>
       </span>
     );
