@@ -1,12 +1,16 @@
 import React from "react";
 import Weather from "./Weather";
+import WeatherForecast from "./WeatherForecast";
+
 import "./App.css";
 
 export default function App() {
   return (
     <div className="App">
-      <Weather defaultCity="Tehran" />
-
+      <div className="app-structure">
+        <Weather defaultCity="Tehran" />
+        <WeatherForecast />
+      </div>
       <footer>
         <small>
           <a
