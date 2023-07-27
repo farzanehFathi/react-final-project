@@ -13,16 +13,22 @@
   margin-bottom: 5px;
 }
 
-.WeatherForecast .forecast-block .forecast-day,
-.temp-max,
-canvas {
-  margin-right: 7px;
+.WeatherForecast .forecast-block .forecast-day {
+  width: 30px;
 }
 
 .WeatherForecast .forecast-block canvas {
   width: 25px;
+  margin: 0px 7px auto;
 }
 
 .WeatherForecast .forecast-block .temp-max {
   color: tomato;
+  width: 25px;
+  margin-right: 5px;
+}
+
+.WeatherForecast .forecast-block .temp-min {
+  opacity: 70%;
+  width: 25px;
 }
