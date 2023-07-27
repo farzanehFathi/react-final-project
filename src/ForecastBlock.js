@@ -1,9 +1,23 @@
 import React from "react";
-import WeatherIcon from "./WeatherIcon";
 import ReactAnimatedWeather from "react-animated-weather";
 
 export default function ForecastBlock({ data }) {
-  console.log(data);
+  function maxTemp() {
+    return Math.round(data.temperature.maximum);
+  }
+
+  function minTemp() {
+    return Math.round(data.temperature.minimum);
+  }
+
+  function forecastDay() {
+    let dayList = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    let time = new Date(data.time * 1000);
+    let dayNum = time.getDay();
+    let day = dayList[dayNum];
+    return day;
+  }
 
   function forecastIcon(iconCode) {
     let codeMapping = {
@@ -38,27 +52,14 @@ export default function ForecastBlock({ data }) {
     );
   }
 
-  function forecastDay() {
-    let dayList = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-    let time = new Date(data.time * 1000);
-    let dayNum = time.getDay();
-    let day = dayList[dayNum];
-    return day;
-  }
-
   return (
     <div className="forecast-block">
       <div className="forecast-day">{forecastDay()}</div>
       <div className="forecast-icon">{forecastIcon(data.condition.icon)}</div>
       <div className="forecast-temp">
         {" "}
-        <span className="temp-max">
-          {Math.round(data.temperature.maximum)}°
-        </span>
-        <span className="temp-min">
-          {Math.round(data.temperature.minimum)}°
-        </span>
+        <span className="temp-max">{maxTemp()}°</span>
+        <span className="temp-min">{minTemp}°</span>
       </div>
     </div>
   );
