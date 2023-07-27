@@ -59,7 +59,7 @@ export default function ForecastBlock({ data }) {
       <div className="forecast-temp">
         {" "}
         <span className="temp-max">{maxTemp()}°</span>
-        <span className="temp-min">{minTemp}°</span>
+        <span className="temp-min">{minTemp()}°</span>
       </div>
     </div>
   );

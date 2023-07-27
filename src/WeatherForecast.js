@@ -4,13 +4,12 @@ import axios from "axios";
 import "./WeatherForecast.css";
 
 export default function WeatherForecast() {
-  const [forecastData, setForecastData] = useState({ ready: false });
+  const [forecastData, setForecastData] = useState(null);
+  const [ready, setReady] = useState(false);
 
   function handleResponse(response) {
-    setForecastData({
-      data: response.data,
-      ready: true,
-    });
+    setForecastData(response.data.daily);
+    setReady(true);
   }
 
   function getForecast() {
@@ -24,15 +23,21 @@ export default function WeatherForecast() {
     axios.get(apiUrl).then(handleResponse);
   }
 
-  if (forecastData.ready) {
+  console.log(forecastData);
+
+  if (ready) {
     return (
       <div className="WeatherForecast">
         <div className="forecast-column">
-          <ForecastBlock data={forecastData.data.daily[1]} />
-          <ForecastBlock data={forecastData.data.daily[2]} />
-          <ForecastBlock data={forecastData.data.daily[3]} />
-          <ForecastBlock data={forecastData.data.daily[4]} />
-          <ForecastBlock data={forecastData.data.daily[5]} />
+          {forecastData.map(function (dailyForcast, index) {
+            if (index < 5) {
+              return (
+                <div key={index}>
+                  <ForecastBlock key={index} data={dailyForcast} />
+                </div>
+              );
+            }
+          })}
         </div>
       </div>
     );
