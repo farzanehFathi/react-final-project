@@ -1,13 +1,8 @@
 .App {
   margin: 20px auto;
-  width: 640px;
+  max-width: 720px;
 }
 
 .App footer {
   font-size: 11px;
-}
-
-.App .app-structure {
-  display: flex;
-  justify-content: space-between;
 }

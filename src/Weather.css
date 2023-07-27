@@ -1,6 +1,28 @@
 .Weather {
+  display: flex;
+  justify-content: space-between;
+
+  border: 1px solid #dadde2;
+  border-radius: 10px;
+}
+
+.Weather .weather-main {
   padding: 20px;
   width: 480px;
-  border: 1px solid #dadde2;
-  border-radius: 4px 0 0 4px;
+}
+
+.Weather .weather-forecast {
+  width: 200px;
+  padding: 20px 15px;
+  background-color: rgba(205, 248, 234, 0.574);
+  border-radius: 0 10px 10px 0;
+}
+
+.WeatherForecast .forecast-block {
+  display: flex;
+  align-items: center;
+  background-color: rgba(241, 229, 216, 0.274);
+  padding: 3px 15px;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }

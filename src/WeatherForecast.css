@@ -1,17 +1,5 @@
-.WeatherForecast .forecast-column {
-  padding: 20px 15px;
-  background-color: rgba(203, 212, 209, 0.237);
-  border-radius: 0 5px 5px 0;
-}
-
-.WeatherForecast .forecast-block {
-  display: flex;
-  align-items: center;
-  background-color: rgba(241, 229, 216, 0.274);
-  padding: 3px 15px;
-  border-radius: 5px;
-  margin-bottom: 5px;
-}
+/* .WeatherForecast .forecast-column {
+} */
 
 .WeatherForecast .forecast-block .forecast-day {
   width: 30px;

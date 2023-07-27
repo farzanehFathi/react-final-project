@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ForecastBlock from "./ForecastBlock";
 import axios from "axios";
 import "./WeatherForecast.css";
 
-export default function WeatherForecast() {
+export default function WeatherForecast(query) {
   const [forecastData, setForecastData] = useState(null);
   const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    setReady(false);
+  }, [query]);
 
   function handleResponse(response) {
     setForecastData(response.data.daily);
@@ -15,8 +19,6 @@ export default function WeatherForecast() {
   function getForecast() {
     let apiKey = "0c78073fed5355o034190aeb4t4430f6";
     let unit = "metric";
-    let query = "Tehran";
-
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${query}&key=${apiKey}&units=${unit}`;
 
     console.log(apiUrl);
