@@ -1,4 +1,8 @@
 .Weather {
+  background-image: url("../img/sky-background.jpg");
+  background-size: cover;
+  background-position: center;
+
   display: flex;
   justify-content: space-between;
 
@@ -24,5 +28,5 @@
   background-color: rgba(241, 229, 216, 0.274);
   padding: 3px 15px;
   border-radius: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }

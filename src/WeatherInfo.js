@@ -7,7 +7,7 @@ import UnitConversion from "./UnitConversion";
 export default function WeatherInfo({ data }) {
   return (
     <div className="WeatherInfo">
-      <div className="location-summary mb-3">
+      <div className="location-summary mb-5">
         {" "}
         <h1 className="text-capitalize">{data.cityName}</h1>
         <ul>
