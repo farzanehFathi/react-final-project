@@ -3,13 +3,13 @@ import ForecastBlock from "./ForecastBlock";
 import axios from "axios";
 import "./WeatherForecast.css";
 
-export default function WeatherForecast(query) {
-  const [forecastData, setForecastData] = useState(null);
-  const [ready, setReady] = useState(false);
+export default function WeatherForecast(city) {
+  let [forecastData, setForecastData] = useState(null);
+  let [ready, setReady] = useState(false);
 
   useEffect(() => {
     setReady(false);
-  }, [query]);
+  }, [city]);
 
   function handleResponse(response) {
     setForecastData(response.data.daily);
@@ -18,6 +18,7 @@ export default function WeatherForecast(query) {
 
   function getForecast() {
     let apiKey = "0c78073fed5355o034190aeb4t4430f6";
+    let query = city.city;
     let unit = "metric";
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${query}&key=${apiKey}&units=${unit}`;
 
@@ -28,6 +29,8 @@ export default function WeatherForecast(query) {
   console.log(forecastData);
 
   if (ready) {
+    console.log(city.city);
+
     return (
       <div className="WeatherForecast">
         <div className="forecast-column">
@@ -45,5 +48,6 @@ export default function WeatherForecast(query) {
     );
   } else {
     getForecast();
+    return "Loading";
   }
 }
